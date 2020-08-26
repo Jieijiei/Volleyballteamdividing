@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script type="text/javascript" src="teamdividing.js"></script>
+    </head>
+    <body>
+    <p>チーム決め君</p>
+    <label for="name">チーム数</label>
+
+    <input type="text" id="name" name="name" required
+        minlength="4" maxlength="8" size="10">
+
+        <div class="sel sel--black-panther">
+                <select name="select-profession" id="select-profession">
+                  <option value="" disabled>ポジション</option>
+                  <option value="left">レフト</option>
+                  <option value="right">ライト</option>
+                  <option value="setter">セッター</option>
+                  <option value="senter">センター</option>
+                  <option value="libero">リベロ</option>
+                </select>
+              </div>
+              
+              <hr class="rule">
+              
+              <div class="sel sel--superman">
+                <select name="select-superpower" id="select-superpower">
+                  <option value="" disabled>チーム数</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              
+              <!--
+                <span class="sel__placeholder sel__placeholder--black-panther">Placeholder Text</span>
+                <div class="sel__box sel__box--black-panther">
+                  <span data-option="option_1" class="sel__box__options sel__box__options--black-panther">Option 1</span>
+                  <span data-option="option_2" class="sel__box__options sel__box__options--black-panther">Option 2</span>
+                  <span data-option="option_3" class="sel__box__options sel__box__options--black-panther">Option 3</span>
+                  <span data-option="option_4" class="sel__box__options sel__box__options--black-panther">Option 4</span>
+                  <span data-option="option_5" class="sel__box__options sel__box__options--black-panther">Option 5</span>
+                </div>
+              -->
+              
+              <!--
+                .not-active.selected = hide
+                .active.selected = show
+              -->
+    </body>
+</html>
