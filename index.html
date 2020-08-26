@@ -1,15 +1,43 @@
 <html>
     <head>
         <link rel="stylesheet" href="stylesheet.css">
-        <script type="text/javascript" src="teamdividing.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
     <p>チーム決め君</p>
-    <label for="name">チーム数</label>
+    <label for="name">氏名、ポジションを入力</label>
 
-    <input type="text" id="name" name="name" required
-        minlength="4" maxlength="8" size="10">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).on("click", ".add", function() {
+        $(this).parent().clone(true).insertAfter($(this).parent());
+    });
+    $(document).on("click", ".del", function() {
+        var target = $(this).parent();
+        if (target.parent().children().length > 1) {
+            target.remove();
+        }
+    });
+    // Toggling the `.selected` state on the options.
+    $('.sel__box__options').click(function() {
+      var txt = $(this).text();
+      var index = $(this).index();
+      
+      $(this).siblings('.sel__box__options').removeClass('selected');
+      $(this).addClass('selected');
+      
+      var $currentSel = $(this).closest('.sel');
+      $currentSel.children('.sel__placeholder').text(txt);
+      $currentSel.children('select').prop('selectedIndex', index + 1);
+    });
+    </script>
+    <div id="input_pluralBox">
+      <div id="input_plural">
+          <input type="text" class="form-control" placeholder="選手名を入力してください">
+          <input type="button" value="＋" class="add pluralBtn">
+          <input type="button" value="－" class="del pluralBtn">
+      </div>
+  </div>
         <div class="sel sel--black-panther">
                 <select name="select-profession" id="select-profession">
                   <option value="" disabled>ポジション</option>
@@ -48,5 +76,6 @@
                 .not-active.selected = hide
                 .active.selected = show
               -->
+              <script type="text/javascript" src="teamdividing.js"></script>
     </body>
 </html>
